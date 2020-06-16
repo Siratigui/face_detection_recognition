@@ -1,0 +1,22 @@
+<br/>
+<br/>
+
+<form action="{% url 'app_controller.save_form' %}" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="id">Enter Unique ID*</label>
+    <input type="text" class="form-control" name="id" id="id" placeholder="Enter Id" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="name">Enter Name</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+  </div>
+  
+  <div class="form-group">
+    <label for="surname">Enter Surname</label>
+    <input type="text" class="form-control" name="surname" id="surname" placeholder="Enter Surame">
+  </div>
+  
+  <button type="submit" class="btn btn-warning">Submit</button>
+</form>

@@ -1,0 +1,23 @@
+
+
+
+<img src="{% url 'app_controller.detect' %}" width="30%" height="50%"/>
+
+
+<input id="aja" name="aja" type="button" value="ajax"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+    $("#aja").click(function(){
+        $.ajax({
+            type:'get',
+            url:'get_id',
+            success:function(data){
+                url = "{% url 'person_controller.index' %}?id=" + data 
+                window.location.href = url;
+            }
+        });
+    });
+ })
+</script>
